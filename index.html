@@ -1,1 +1,75 @@
-<!doctype html><html lang="ko"><head><meta charset="UTF-8"/><title>🎱 행운의 로또</title><meta name="viewport" content="width=device-width,initial-scale=1"/><script defer="defer" src="bundle.js"></script></head><body><main id="app"><h1>🎱 행운의 로또</h1><form id="purchase-form" class="purchase__form"><label for="purchase-input" class="purchase__description">구입할 금액을 입력해주세요.</label><div class="purchase__input-container"><input id="purchase-input" class="purchase__input" placeholder="금액" name="cash" type="number" min="1000" max="100000" required/> <button class="purchase__submit">구입</button></div></form><section id="lotto-list-section" class="lotto-list__section lotto-list__section-display-none"><header class="lotto-list__header"><h4 id="lotto-list-description" class="lotto-list__description"></h4><div class="lotto-list__toggle-container"><span class="lotto-list__toggle-description">번호 보기</span> <span id="toggle" class="toggle"><input type="checkbox" id="toggle-input" class="lotto-list__toggle-input"/> <label id="slider" class="slider round"></label></span></div></header><ul id="lotto-lists" class="lotto-lists"></ul></section></main></body></html>
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>🎱 행운의 로또</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script defer src="bundle.js"></script></head>
+  <body>
+    <main id="app">
+      <h1>🎱 행운의 로또</h1>
+      <form id="purchase-form" class="purchase__form">
+        <label for="purchase-input" class="purchase__description">
+          구입할 금액을 입력해주세요.
+        </label>
+        <div class="purchase__input-container">
+          <input
+            id="purchase-input"
+            class="purchase__input"
+            placeholder="금액"
+            name="cash"
+            type="number"
+            min="1000"
+            max="100000"
+            required
+          />
+          <button id="purhchase-submit-button" class="purchase__submit">구입</button>
+        </div>
+      </form>
+      <section id="lotto-list-section" class="lotto-list__section hide">
+        <header class="lotto-list__header">
+          <h4 id="lotto-list-description" class="lotto-list__description"></h4>
+          <div class="lotto-list__toggle-container">
+            <span class="lotto-list__toggle-description">번호 보기</span>
+            <span id="toggle" class="toggle">
+              <input type="checkbox" id="toggle-input" class="lotto-list__toggle-input" />
+              <label id="slider" class="slider round"></label>
+            </span>
+          </div>
+        </header>
+        <ul id="lotto-lists" class="lotto-lists"></ul>
+      </section>
+      <section id="winning-numbers-section" class="winning-numbers__section hide">
+        <h4>지난 주 당첨번호 6개와 보너스 번호 1개를 입력해주세요.</h4>
+        <form id="winning-numbers-form" class="winning-numbers__form">
+          <div class="winning-numbers__inputs">
+            <label for="regular-number">당첨 번호</label>
+            <label for="bonus-number" class="bonus__label">보너스 번호</label>
+            <div>
+              <input id="regular-number" class="winning-numbers__input" type="number" name="regularNumberElement" min="1" max="45" required/>
+              <input id="regular-number" class="winning-numbers__input" type="number" name="regularNumberElement" min="1" max="45" required/>
+              <input id="regular-number" class="winning-numbers__input" type="number" name="regularNumberElement" min="1" max="45" required/>
+              <input id="regular-number" class="winning-numbers__input" type="number" name="regularNumberElement" min="1" max="45" required/>
+              <input id="regular-number" class="winning-numbers__input" type="number" name="regularNumberElement" min="1" max="45" required/>
+              <input id="regular-number" class="winning-numbers__input" type="number" name="regularNumberElement" min="1" max="45" required/>
+            </div>
+            <div class="bonus-number__input">
+              <input id="bonus-number" class="winning-numbers__input" type="number" name="bonusNumberElement" min="1" max="45" required/>
+            </div>
+          </div>
+          <button id="result-submit-button" class="winning-numbers__button">결과 확인하기</button>
+        </form>
+      </section>
+      <section id="modal-container" class="modal hide">
+        <div class="modal__contents">
+          <div id="modal-close" class="modal__close">x</div>
+          <h2>🏆 당첨 통계 🏆</h2>
+          <table id="lotto-result" class="winners-table">
+          </table>
+          <p id="profit-description" class="modal__description">당신의 총 수익률은 %입니다.</p>
+          <button id="restart-lotto" class="restart-button">다시 시작하기</button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
